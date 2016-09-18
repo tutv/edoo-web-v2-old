@@ -4,7 +4,7 @@
             <h4 class="modal-title">Đăng Nhập</h4>
         </div>
         <div class="modal-body">
-            <div class="errors">
+            <div class="errors" [hidden]="errors.length == 0">
                 <div class="error" *ngFor="let error of errors">{{error}}</div>
             </div>
             <form id="loginForm">
