@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../login.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-login',
@@ -12,7 +13,10 @@ export class LoginComponent implements OnInit {
     password: string = '';
     errors: string[] = [];
 
-    constructor(private loginService: LoginService) {
+    constructor(
+        private loginService: LoginService,
+        private router: Router
+    ) {
     }
 
     ngOnInit() {
@@ -28,6 +32,7 @@ export class LoginComponent implements OnInit {
 
                     let data = response.json();
                     alert(data.message);
+                    this.router.navigate(['/class']);
                 },
                 error => {
                     var body = error._body;
