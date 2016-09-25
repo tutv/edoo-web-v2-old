@@ -10,6 +10,7 @@ import { NotiComponent } from './noti/noti.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ListClassComponent } from './list-class/list-class.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ListClassComponent } from './list-class/list-class.component';
     NotiComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    ListClassComponent
+    ListClassComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,

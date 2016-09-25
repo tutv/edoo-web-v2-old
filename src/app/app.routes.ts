@@ -3,8 +3,13 @@ import {Routes, RouterModule} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {ListClassComponent} from "./list-class/list-class.component";
+import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 
 const appRoutes: Routes = [
+    {
+        path: 'welcome',
+        component: WelcomePageComponent
+    },
     {
         path: 'login',
         component: LoginComponent
@@ -16,7 +21,7 @@ const appRoutes: Routes = [
     {
         path: 'class',
         component: ListClassComponent
-    }
+    },
 ];
 
 export const appRoutingProviders: any[] = [];
