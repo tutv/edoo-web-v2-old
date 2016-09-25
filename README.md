@@ -6,6 +6,9 @@ http://beta.uetf.me
 - Install angular-cli
 `npm i -g angular-cli`
 
+- Install typings
+`npm i typings --g`
+
 - Install dependency packages.
 `npm i`
 

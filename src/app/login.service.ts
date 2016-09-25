@@ -1,27 +1,24 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers, Response} from "@angular/http";
+import {Response} from "@angular/http";
 import {Observable} from "rxjs";
-import 'rxjs/add/operator/map'
+import {ApiService} from "./services/api.service";
 
 @Injectable()
 export class LoginService {
-    private apiUrl: string = 'http://api-v2.uetf.me/login';
-
-    constructor(private http: Http) {
+    constructor(private api: ApiService) {
     }
 
-    //noinspection JSAnnotator
     authenticate(email: string, password: string): Observable<Response> {
         var data = "email=" + email + "&password=" + password;
-        console.log(data);
 
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        var args = {
+            data: data,
+            method: 'POST',
+            url: '/login'
+        };
 
         return this
-            .http.post(this.apiUrl, data, {
-                headers: headers
-            });
+            .api.request(args);
     }
 
 }

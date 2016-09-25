@@ -1,22 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../login.service";
 import {Router} from "@angular/router";
+import {ApiService} from "../services/api.service";
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    providers: [LoginService]
+    providers: [LoginService, ApiService]
 })
 export class LoginComponent implements OnInit {
     email: string = '';
     password: string = '';
     errors: string[] = [];
 
-    constructor(
-        private loginService: LoginService,
-        private router: Router
-    ) {
+    constructor(private loginService: LoginService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
                 error => {
                     var body = error._body;
                     var data = JSON.parse(body);
-                    this.errors =[data.message];
+                    this.errors = [data.message];
                 }
             );
     }
