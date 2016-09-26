@@ -4,12 +4,13 @@ import {Router} from "@angular/router";
 import {ApiService} from "../services/api.service";
 import {StorageService} from "../services/storage.service";
 import {CookieService} from 'angular2-cookie/services/cookies.service';
+import {AuthService} from "../services/auth.service";
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    providers: [LoginService, ApiService, StorageService, CookieService]
+    providers: [LoginService, ApiService, StorageService, AuthService]
 })
 export class LoginComponent implements OnInit {
     email: string = '';
@@ -19,7 +20,11 @@ export class LoginComponent implements OnInit {
 
     constructor(private loginService: LoginService,
                 private router: Router,
-                private storage: StorageService) {
+                private storage: StorageService,
+                private auth: AuthService) {
+        if (this.auth.isAuthorized()) {
+            this.router.navigate(['/class']);
+        }
     }
 
     ngOnInit() {

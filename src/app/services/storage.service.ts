@@ -15,11 +15,11 @@ export class StorageService {
         this.storage.putObject('user_data', user);
     }
 
-    getUserData() {
+    getUserData():Object {
         return this.storage.getObject('user_data');
     }
 
-    getToken() {
+    getToken():string {
         return this.storage.get('user_token');
     }
 

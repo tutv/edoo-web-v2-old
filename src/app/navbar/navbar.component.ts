@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {StorageService} from "../services/storage.service";
-// import {AuthService} from "../services/auth.service";
+// import {LoginComponent} from "../login/login.component";
 
 @Component({
     selector: 'app-navbar',
@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.updateUserData();
     }
 
     public updateUserData() {
