@@ -5,12 +5,11 @@ import {Http} from "@angular/http";
 @Component({
     selector: 'app-welcome-page',
     templateUrl: './welcome-page.component.html',
-    styleUrls: ['./welcome-page.component.scss'],
-    providers: [ApiService, Http]
+    styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
 
-    constructor(private api: ApiService) {
+    constructor() {
     }
 
     ngOnInit() {
