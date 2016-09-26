@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ListClassComponent } from './list-class/list-class.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     NavbarComponent,
     PageNotFoundComponent,
     ListClassComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
