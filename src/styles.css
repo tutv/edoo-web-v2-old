@@ -5958,3 +5958,7 @@ button.close {
 body {
     background-color: #eee;
 }
+
+[hidden] {
+    display: none!important;
+}
