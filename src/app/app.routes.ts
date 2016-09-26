@@ -5,6 +5,7 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {ListClassComponent} from "./list-class/list-class.component";
 import {WelcomePageComponent} from "./welcome-page/welcome-page.component";
 import {EditProfileComponent} from "./edit-profile/edit-profile.component";
+import {LogoutComponent} from "./logout/logout.component";
 
 const appRoutes: Routes = [
     {
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'logout',
+        component: LogoutComponent
     },
     {
         path: '404',

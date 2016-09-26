@@ -22,4 +22,8 @@ export class StorageService {
     getToken() {
         return this.storage.get('user_token');
     }
+
+    removeAll(): void {
+        this.storage.removeAll();
+    }
 }

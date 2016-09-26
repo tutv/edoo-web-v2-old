@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {LoginService} from "../login.service";
 import {Router} from "@angular/router";
 import {ApiService} from "../services/api.service";
@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     email: string = '';
     password: string = '';
     errors: string[] = [];
+    @Output() loginChange = new EventEmitter();
 
     constructor(private loginService: LoginService,
                 private router: Router,
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
                     this.storage.setUserData(user);
 
                     this.router.navigate(['/class']);
+                    this.loginChange.emit(user);
                 },
                 error => {
                     var body = error._body;
