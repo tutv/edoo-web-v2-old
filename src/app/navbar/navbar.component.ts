@@ -6,14 +6,13 @@ import {StorageService} from "../services/storage.service";
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
-    providers: [AuthService]
+    providers: [AuthService, StorageService]
 })
 export class NavbarComponent implements OnInit {
     public user: Object = {};
 
     constructor(private auth: AuthService,
                 public storage: StorageService) {
-        this.updateUserData();
     }
 
     ngOnInit() {

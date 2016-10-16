@@ -8,7 +8,7 @@ export class LoginService {
     constructor(private api: ApiService) {
     }
 
-    authenticate(email: string, password: string): Observable<Response> {
+    auth(email: string, password: string): Observable<Response> {
         var data = "email=" + email + "&password=" + password;
 
         var args = {

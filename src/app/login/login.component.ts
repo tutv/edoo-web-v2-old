@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from "@angular/core";
+import {Component, OnInit, Output, EventEmitter, Input} from "@angular/core";
 import {LoginService} from "../login.service";
 import {Router} from "@angular/router";
 import {ApiService} from "../services/api.service";
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     email: string = '';
     password: string = '';
     errors: string[] = [];
-    @Output() loginChange = new EventEmitter();
+    @Output('login') loginChange = new EventEmitter();
 
     constructor(private loginService: LoginService,
                 private router: Router,
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     }
 
     public login(): void {
-        this.loginService.authenticate(this.email, this.password)
+        this.loginService.auth(this.email, this.password)
             .subscribe(
                 response => {
                     this.errors = [];
