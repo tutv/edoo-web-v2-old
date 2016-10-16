@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" (loginChange)="updateUserData()">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-mobile"
@@ -24,10 +24,10 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="login" [hidden]="isLoggedIn()"><a routerLink="/login">Đăng nhập</a></li>
-                <li class="dropdown user" [hidden]="!isLoggedIn()">
+                <li class="dropdown user" *ngIf="isLoggedIn()">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
-                        <img src="{{user.avatar}}" class="avatar">
+                        <img [src]="user.avatar" class="avatar">
                         {{user.name}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a routerLink="/profile">Cập nhập thông tin</a></li>

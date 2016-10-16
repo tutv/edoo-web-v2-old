@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {AuthService} from "../services/auth.service";
 import {StorageService} from "../services/storage.service";
-// import {LoginComponent} from "../login/login.component";
 
 @Component({
     selector: 'app-navbar',
@@ -22,7 +21,7 @@ export class NavbarComponent implements OnInit {
     }
 
     public updateUserData() {
-        this.user = this.storage.getUserData()
+        this.user = this.storage.getUserData();
     }
 
     public isLoggedIn(): boolean {
